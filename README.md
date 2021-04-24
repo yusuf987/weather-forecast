@@ -1,15 +1,30 @@
-# Introduction
-![image info](./weather.PNG)
-5-days-weather forcast, this app will show next 5 days weather forcast of bangalore location,
+![image info](./weather.PNG)  
 
+this app will show next 5 days weather forcast of bangalore location.
 
 ## Demo
 The project is hosted on netlify  below is the like URL,
 https://weather-forecast-blr.netlify.app/
 
-# How to build/ run/test project
+## Features
+
+- show hour wise weather forecast in 3-hour set  
+- icon indicating the sky description along with each hour set
+- option to view in Celcius and Fahrenheit 
+- next 5 days with week name 
 
 
-# What could be done with more time
-the api has many data related weather eg: wind,humadity hourly wise,
-with extra time all those detail could be implemented 
+## Technology & Tools
+
+this app uses a number of open source projects and tools to work properly:
+
+- [ReactJS] - HTML enhanced for web apps!
+- [node.js] - mainly used for NPM to bootstrap react project
+- [VS Code] - as code editor
+
+
+## Installation
+
+
+
+
