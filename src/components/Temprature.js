@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import useWindowDimensions from "./useWindowDimensions";
 
 function Temprature({ data_list }) {
     const [data, set_data] = useState(data_list[0])
     const [unit, set_unit] = useState('c')
+    const { width } = useWindowDimensions();
+
     let logo = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     useEffect(() => {
         set_data(data_list[0])
@@ -37,12 +40,12 @@ function Temprature({ data_list }) {
                         let time_set = hours_data.dt_txt.split(" ")[1].split(":")
                         let hour = time_set[0] + ":" + time_set[1]
 
-                        if(hour !== '00:00')
-                        {
                             let opacity = 0.6
+                            let fontSize = 14
                             if (hours_data.dt_txt === data.dt_txt) {
                                 opacity = 1
-                            }
+                            }                         
+                            if(width < 500){fontSize = 10}
                             let icon = hours_data.weather[0].icon
                             let invert = ''
                             if(icon === '01n') {invert = 'invert'}
@@ -50,15 +53,13 @@ function Temprature({ data_list }) {
                             let weather_logo = `https://openweathermap.org/img/wn/${icon}@2x.png`
     
                             return (
-                                <span className="flex f12 p10 pointer" key={i} onClick={() => { set_data(hours_data) }} style={{ opacity: opacity}}>
+                                <span className="flex f12 p10 pointer" key={i} onClick={() => { set_data(hours_data) }} style={{ opacity: opacity,fontSize:fontSize}}>
                                     <span>{hour}</span>
                                     <img className={"img25 " + invert}  src={weather_logo} alt={description} />
     
                                 </span>
                             )
-                        }
-                        return ""
-                     
+                   
 
                     })
                 }
