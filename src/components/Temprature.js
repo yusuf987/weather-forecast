@@ -57,6 +57,7 @@ function Temprature({ data_list }) {
                                 </span>
                             )
                         }
+                        return ""
                      
 
                     })
