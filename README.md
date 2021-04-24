@@ -13,6 +13,13 @@ https://weather-forecast-blr.netlify.app/
 - step 3 - install the project dependencies by ``` npm i ```
 - step 4 - run ``` npm start ``` this will start the project in default browser on http://localhost:3000/
 
+### option 2 
+- step 1 - download the zip folder of the project source code as mention in below images
+- ![image info](./src/images/download_zip.png) 
+- step 2 - extract the folder and open the project in your code editor
+- step 3 - swith to root folder and run command ``` npm i ``` (rood folder the one where package.json file exists) once command succesfully project will start in defalt browser on http://localhost:3000/
+
+
 ## Enhancement
 with extra time below enhancement could be done,   
 
