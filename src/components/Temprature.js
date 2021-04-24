@@ -31,7 +31,7 @@ function Temprature({ data_list }) {
                 </div>
             </div>
 
-            <div className="flex_row">
+            <div className="flex_row" style={{justifyContent:'center'}}>
                 {
                     data_list.map((hours_data,i) => {
                         let time_set = hours_data.dt_txt.split(" ")[1].split(":")

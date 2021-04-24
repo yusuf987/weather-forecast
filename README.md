@@ -1,4 +1,4 @@
-![image info](./weather.PNG)  
+![image info](./src/images/weather.PNG)  
 
 this app will show next 5 days weather forcast of bangalore location.
 
