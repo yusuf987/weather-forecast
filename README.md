@@ -30,6 +30,20 @@ this project using open Weather (https://openweathermap.org/) api for 5-day weat
 - option to view in Celcius and Fahrenheit 
 - next 5 days with week name 
 
+## Manual Testing
+**web browser:** I have tested the UI on different browsers mention below and found 98-99% identical behavior 
+
+ - Chrome Version 87.0.4280.88 (Official Build) (64-bit)
+ - Microsoft Edge Version 87.0.664.60 (Official build) (64-bit)
+ - FireFox Version 84.0 (64-bit)
+
+**mobile devices:** for small devices test I used Chrome's developer tools and test over different screen size and found 96-97% identical behavior  below are the device name & version i used 
+
+ - Moto G4
+ - Galaxy S5
+ - Pixel 2
+ - iphone 6/7/8
+ - ipad
 
 ## Technology & Tools
 
