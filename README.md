@@ -3,10 +3,15 @@
 this app will show next 5 days weather forcast of bangalore location.
 
 ## Demo
-The project is hosted on netlify  below is the like URL,  
+The project is hosted on netlify  below is the live URL,  
 https://weather-forecast-blr.netlify.app/
 
 ## How to build/ run/test project
+### option 1 (with git)
+- step 1 - clone the project by running the command ``` git clone https://github.com/yusuf987/weather-forecast.git ``` in command terminal
+- step 2 - swith to project directory by ``` cd weather-forecast ```
+- step 3 - install the project dependencies by ``` npm i ```
+- step 4 - run ``` npm start ``` this will start the project in default browser on http://localhost:3000/
 
 ## Enhancement
 with extra time below enhancement could be done,   
