@@ -34,25 +34,31 @@ function Temprature({ data_list }) {
             <div className="flex_row">
                 {
                     data_list.map((hours_data,i) => {
-                        let opacity = 0.6
-                        if (hours_data.dt_txt === data.dt_txt) {
-                            opacity = 1
-                        }
                         let time_set = hours_data.dt_txt.split(" ")[1].split(":")
                         let hour = time_set[0] + ":" + time_set[1]
-                        let icon = hours_data.weather[0].icon
-                        let invert = ''
-                        if(icon === '01n') {invert = 'invert'}
-                        let description = hours_data.weather[0].description
-                        let weather_logo = `https://openweathermap.org/img/wn/${icon}@2x.png`
 
-                        return (
-                            <span className="flex f12 p10 pointer" key={i} onClick={() => { set_data(hours_data) }} style={{ opacity: opacity}}>
-                                <span>{hour}</span>
-                                <img className={"img25 " + invert}  src={weather_logo} alt={description} />
+                        if(hour !== '00:00')
+                        {
+                            let opacity = 0.6
+                            if (hours_data.dt_txt === data.dt_txt) {
+                                opacity = 1
+                            }
+                            let icon = hours_data.weather[0].icon
+                            let invert = ''
+                            if(icon === '01n') {invert = 'invert'}
+                            let description = hours_data.weather[0].description
+                            let weather_logo = `https://openweathermap.org/img/wn/${icon}@2x.png`
+    
+                            return (
+                                <span className="flex f12 p10 pointer" key={i} onClick={() => { set_data(hours_data) }} style={{ opacity: opacity}}>
+                                    <span>{hour}</span>
+                                    <img className={"img25 " + invert}  src={weather_logo} alt={description} />
+    
+                                </span>
+                            )
+                        }
+                     
 
-                            </span>
-                        )
                     })
                 }
             </div>
