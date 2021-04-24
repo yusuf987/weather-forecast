@@ -1,5 +1,6 @@
 # Introduction
-this app will show next 5 days weather forcast
+5-days-weather forcast, this app will show next 5 days weather forcast of bangalore location,
+live demo : https://weather-forecast-blr.netlify.app/
 
 # How to build/ run/test project
 
