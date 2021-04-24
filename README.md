@@ -25,6 +25,7 @@ with extra time below enhancement could be done,
 
 - since we calling weather API on the first load the first render may delay under the slow network connection, to give a better user experience we would show a decent spinner till the laoding time  ![](https://img.shields.io/badge/-UX:enhancement-1aba75.svg)
 - i have notice small discrepancy in mozilla browser, this could be fix ![](https://img.shields.io/badge/-UI:bug-e35f42.svg)
+- [error handeling] - proper error handling can be done in the case of error response from weather api ![](https://img.shields.io/badge/-bug-e35f42.svg)
 - option to change city ![](https://img.shields.io/badge/-feature-338ef5.svg)
 
 ## API Reference
