@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 function Temprature({ data_list }) {
     const [data, set_data] = useState(data_list[0])
     const [unit, set_unit] = useState('c')
-    let logo = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    let logo = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     useEffect(() => {
         set_data(data_list[0])
     }, [data_list])
@@ -44,7 +44,7 @@ function Temprature({ data_list }) {
                         let invert = ''
                         if(icon === '01n') {invert = 'invert'}
                         let description = hours_data.weather[0].description
-                        let weather_logo = `http://openweathermap.org/img/wn/${icon}@2x.png`
+                        let weather_logo = `https://openweathermap.org/img/wn/${icon}@2x.png`
 
                         return (
                             <span className="flex f12 p10 pointer" key={i} onClick={() => { set_data(hours_data) }} style={{ opacity: opacity}}>
