@@ -48,7 +48,7 @@ function Days({ DateList, callback, selected_date }) {
           }
 
           return (
-            <div className="date_container" style={{ opacity: opacity }} onClick={() => { date_click(date) }}>
+            <div key={i} className="date_container" style={{ opacity: opacity }} onClick={() => { date_click(date) }}>
               {/* date in DD-MMM Format */}
               <div style={{ fontSize: date_font }}> {dd + " " + mmm} </div>
               {/* Wekname */}

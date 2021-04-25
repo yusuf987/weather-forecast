@@ -40,7 +40,7 @@ function App() {
           set_date_list(list)
         },
         (error) => {
-
+         console.log("Something went wrong",error)
         }
       )
   }, [date])
