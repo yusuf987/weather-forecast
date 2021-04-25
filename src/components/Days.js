@@ -1,67 +1,68 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useWindowDimensions from "./useWindowDimensions";
 
 
-function Days({ date,opacity,callback }) {
+function Days({ DateList, callback, selected_date }) {
 
-  const [day,set_day] = useState('')
-  const [dd_mmm,set_dd_mmm] = useState('')
   const { width } = useWindowDimensions();
-  const [date_font,set_date_font] = useState()
-  const [day_font,set_day_font] = useState()
-
-
-  useEffect(() => {
-    var d = new Date(date);
-    var td = new Date();
-
-    var today = new Date(date);
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    ];
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mmm = monthNames[today.getMonth()]
+  ];
 
-    set_dd_mmm(dd + " " + mmm)
-
-    if(td.toLocaleDateString() === d.toLocaleDateString() )
-    {
-      set_day("Today")
-    }
-    else{
-      set_day(d.toLocaleDateString('en-IN', { weekday: 'long' }))
-
-    }
-
-    if(width<500)
-    {
-      set_date_font(12)
-      set_day_font(8)
-      set_day(d.toLocaleDateString('en-IN', { weekday: 'short' }))
-
-    }
-    else
-    {
-      set_date_font(18)
-      set_day_font(10)
-    }
-
-  }, [width,date])
-
-  function click(date){
-
+  function date_click(date) {
     callback(date)
-
   }
 
   return (
-    <div  className="date_container" style={{opacity: opacity}} onClick={()=>{click(date)}}>
-    <div  style={{fontSize:date_font}}> {dd_mmm} </div>
-    <span style={{fontSize:day_font}}>{day}</span>       
+    <div style={{ display: 'flex', fontSize: 16 }}>
+      {
+        DateList.map((date, i) => {
+
+          //initial states
+          var d = new Date(date); 
+          var td = new Date();
+          var dd = String(d.getDate()).padStart(2, '0');
+          var mmm = monthNames[d.getMonth()]
+          let opacity = 0.6
+          let day = ''
+          let date_font = 18
+          let day_font = 10
+
+          //set weekname
+          if (td.toLocaleDateString() === d.toLocaleDateString()) { day = 'today' }
+          else { day = d.toLocaleDateString('en-IN', { weekday: 'long' }) }
+
+          //set focus
+          if (new Date(selected_date).toLocaleDateString() === d.toLocaleDateString()) { opacity = 1 }
+
+
+          //change font for small screen
+          if (width < 500) {
+            date_font = 12
+            day_font = 8
+            day = d.toLocaleDateString('en-IN', { weekday: 'short' })
+          }
+          else {
+            date_font = 18
+            day_font = 10
+          }
+
+          return (
+            <div className="date_container" style={{ opacity: opacity }} onClick={() => { date_click(date) }}>
+              {/* date in DD-MMM Format */}
+              <div style={{ fontSize: date_font }}> {dd + " " + mmm} </div>
+              {/* Wekname */}
+              <span style={{ fontSize: day_font }}>{day}</span>
+            </div>
+          )
+        })
+      }
 
 
     </div>
+
   );
 }
 
 export default Days;
+
