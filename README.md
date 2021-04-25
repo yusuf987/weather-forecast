@@ -20,8 +20,7 @@ https://weather-forecast-blr.netlify.app/
 - step 3 - swith to root folder and run command ``` npm i ``` (rood folder the one where package.json file exists) once command succesfully project will start in defalt browser on http://localhost:3000/
 
 
-## Enhancement
-with extra time below enhancement could be done,   
+## What could be done with more time
 
 - since we calling weather API on the first load the first render may delay under the slow network connection, to give a better user experience we would show a decent spinner till the laoding time  ![](https://img.shields.io/badge/-UX:enhancement-1aba75.svg)
 - i have notice small discrepancy in mozilla browser, this could be fix ![](https://img.shields.io/badge/-UI:bug-e35f42.svg)
