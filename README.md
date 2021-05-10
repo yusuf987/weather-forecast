@@ -27,6 +27,12 @@ https://weather-forecast-blr.netlify.app/
 - [error handeling] - proper error handling can be done in the case of error response from weather api ![](https://img.shields.io/badge/-bug-e35f42.svg)
 - option to change city ![](https://img.shields.io/badge/-feature-338ef5.svg)
 
+## Unit Test
+Jest and enzyme are used to perform unit tests on components.
+Following command starts running the unit tests in the application.  
+
+``` npm test ```
+
 ## API Reference
 this project using open Weather (https://openweathermap.org/) api for 5-day weather api data
 
