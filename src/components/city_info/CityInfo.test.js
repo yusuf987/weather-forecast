@@ -1,7 +1,6 @@
-import { screen } from '@testing-library/react';
+import CityInfo from './CityInfo';
 import {render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import App from './App';
 
 
 let container = null;
@@ -17,11 +16,11 @@ afterEach(() => {
 });
 
 test('renders correctly', () => {
-  act(() => {
-    render(<App />,container);
-  });
+    
+    act(() => {
+        render(<CityInfo />,container);
+      });
   
-  const header_title = screen.getByText("weather forecast");
-  expect(header_title).toBeInTheDocument();
+  expect(container.querySelector("span").textContent).toBe("Bengaluru, Karnataka");
 });
 

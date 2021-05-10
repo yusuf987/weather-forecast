@@ -1,12 +1,12 @@
-import useWindowDimensions from "./useWindowDimensions";
-import { img_base_url } from "../constant/constant";
+import useWindowDimensions from "../dimensions/useWindowDimensions";
+import { img_base_url } from "../../constant/constant";
 
 
 function Hours({ data_list, set_data, data }) {
     const { width } = useWindowDimensions();
 
     return (
-        <div className="flex_row" style={{ justifyContent: 'center' }}>
+        <div   className="flex_row" style={{ justifyContent: 'center' }}>
             {
                 data_list.map((hours_data, i) => {
                     // Initial state
@@ -27,8 +27,8 @@ function Hours({ data_list, set_data, data }) {
                     if (icon === '01n') { invert = 'invert' }
                    
                     return (
-                        <span className="flex f12 p10 pointer" key={i} onClick={() => { set_data(hours_data) }} style={{ opacity: opacity, fontSize: fontSize }}>
-                            <span>{hour}</span>
+                        <span data-testid="hour-card" className="flex f12 p10 pointer" key={i} onClick={() => { set_data(hours_data) }} style={{ opacity: opacity, fontSize: fontSize }}>
+                            <span data-testid="hour">{hour}</span>
                             <img className={"img25 " + invert} src={weather_logo} alt={description} />
                         </span>
                     )

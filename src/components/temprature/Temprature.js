@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Hours from "../components/Hours";
-import { img_base_url } from "../constant/constant";
+import Hours from "../hours/Hours";
+import { img_base_url } from "../../constant/constant";
 
 function Temprature({ data_list }) {
     // Initial States
@@ -24,9 +24,9 @@ function Temprature({ data_list }) {
                 {/* Temprature Info */}
                 <div className="flex_row">
                     <div className="flex_row">
-                        <img className={"img90"} src={logo} alt={data.weather[0].description} style={{ filter: (data.weather[0].icon === '01n') ? 'invert(1)' : '' }} />
+                        <img data-testid="img" className={"img90"} src={logo} alt={data.weather[0].description} style={{ filter: (data.weather[0].icon === '01n') ? 'invert(1)' : '' }} />
                     </div>
-                    <span style={{ fontSize: 60 }}>{(unit === 'c') ? (data.main.temp - 273.15).toFixed() : (((data.main.temp - 273.15) * (9 / 5)) + 32).toFixed()}</span>
+                    <span data-testid="temprature" style={{ fontSize: 60 }}>{(unit === 'c') ? (data.main.temp - 273.15).toFixed() : (((data.main.temp - 273.15) * (9 / 5)) + 32).toFixed()}</span>
                     <span onClick={() => { change_unit("c") }} style={{ cursor: 'pointer', opacity: (unit === 'c') ? 1 : 0.6, padding: 0 }}>&nbsp;°C</span>
                     <span>&nbsp;|&nbsp;</span>
                     <span onClick={() => { change_unit("f") }} style={{ cursor: 'pointer', opacity: (unit === 'c') ? 0.6 : 1 }}>°F</span>

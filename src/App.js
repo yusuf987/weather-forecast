@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Days from "./components/Days";
-import CityInfo from "./components/CityInfo";
-import Temprature from "./components/Temprature";
-import Header from "./components/Header";
+import Days from "./components/days/Days";
+import CityInfo from "./components/city_info/CityInfo";
+import Temprature from "./components/temprature/Temprature";
+import Header from "./components/header/Header";
 import { weather_api } from "./constant/constant";
 
 function App() {

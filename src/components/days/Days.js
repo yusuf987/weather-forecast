@@ -1,5 +1,5 @@
 import React from "react";
-import useWindowDimensions from "./useWindowDimensions";
+import useWindowDimensions from "../dimensions/useWindowDimensions";
 
 
 function Days({ DateList, callback, selected_date }) {
@@ -48,9 +48,9 @@ function Days({ DateList, callback, selected_date }) {
           }
 
           return (
-            <div key={i} className="date_container" style={{ opacity: opacity }} onClick={() => { date_click(date) }}>
+            <div data-testid="date-card" key={i} className="date_container" style={{ opacity: opacity }} onClick={() => { date_click(date) }}>
               {/* date in DD-MMM Format */}
-              <div style={{ fontSize: date_font }}> {dd + " " + mmm} </div>
+              <div data-testid="date" style={{ fontSize: date_font }}> {dd + " " + mmm} </div>
               {/* Wekname */}
               <span style={{ fontSize: day_font }}>{day}</span>
             </div>
