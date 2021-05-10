@@ -29,9 +29,9 @@ https://weather-forecast-blr.netlify.app/
 
 ## Unit Test
 Jest and enzyme are used to perform unit tests on components.
-Following command starts running the unit tests in the application.  
+Following command runs all the unit test cases in the application.  
 
-``` npm test ```
+``` npm test a ```
 
 ## API Reference
 this project using open Weather (https://openweathermap.org/) api for 5-day weather api data
